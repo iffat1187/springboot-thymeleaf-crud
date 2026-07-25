@@ -1,4 +1,8 @@
 package com.teach.librarymanagementsystem.repository;
 
-public class BookRepository {
+import com.teach.librarymanagementsystem.entity.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, Integer> {
+
 }
