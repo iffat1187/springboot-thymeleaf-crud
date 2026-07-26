@@ -61,4 +61,35 @@ public class BookController {
         return "list-book";
     }
 
+    @GetMapping("/edit/{id}")
+    public String showEditBookForm(
+            @PathVariable Integer id,
+            Model model) {
+
+
+        Book book = bookService.getBookById(id);
+
+        model.addAttribute("book", book);
+
+        return "edit-book";
+    }
+
+    @PostMapping("/update")
+    public String updateBook(
+            @Valid @ModelAttribute("book") Book book,
+            BindingResult bindingResult) {
+
+
+        if(bindingResult.hasErrors()) {
+
+            return "edit-book";
+        }
+
+
+        bookService.updateBook(book);
+
+
+        return "redirect:/book/list";
+    }
+
 }
