@@ -92,4 +92,20 @@ public class BookController {
         return "redirect:/book/list";
     }
 
+    // Delete Book
+// URL: /book/delete/{id}
+// Example: /book/delete/5
+// ==========================================
+
+    @GetMapping("/delete/{id}")
+    public String deleteBook(
+            @PathVariable Integer id) {
+
+
+        bookService.deleteBook(id);
+
+
+        return "redirect:/book/list";
+    }
+
 }
