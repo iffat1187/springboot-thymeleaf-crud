@@ -329,6 +329,64 @@
 </div>
 
 
+<!-- ==========================
+     Delete By Category
+========================== -->
+
+<div class="card shadow-sm mb-4">
+
+    <div class="card-body">
+
+
+        <form th:action="@{/book/delete/category}"
+              method="post">
+
+
+            <div class="row g-3">
+
+
+                <div class="col-md-10">
+
+                    <input type="text"
+                           name="category"
+                           class="form-control"
+                           placeholder="Enter category to delete">
+
+
+                </div>
+
+
+
+                <div class="col-md-2 d-grid">
+
+
+                    <button type="submit"
+                            class="btn btn-danger"
+                            onclick="return confirmDelete()">
+
+
+                        <i class="bi bi-trash"></i>
+
+                        Delete
+
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</div>
+
+
 
 
 

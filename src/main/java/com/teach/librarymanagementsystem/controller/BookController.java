@@ -136,4 +136,26 @@ public class BookController {
 
     }
 
+    // ==========================================
+// Delete Books By Category
+// URL:
+// /book/delete/category
+// ==========================================
+
+    // ==========================================
+// Delete Books By Category
+// ==========================================
+
+    @PostMapping("/delete/category")
+    public String deleteBooksByCategory(
+            @RequestParam("category") String category) {
+
+
+        bookService.deleteBooksByCategory(category);
+
+
+        return "redirect:/book/list";
+
+    }
+
 }
