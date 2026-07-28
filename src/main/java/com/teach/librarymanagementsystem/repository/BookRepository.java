@@ -8,18 +8,18 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
     // ==========================================
-    // Search Book by Title (Case-Insensitive)
-    // ==========================================
-    List<Book> findByTitleEqualsIgnoreCase(String title);
+// Search Books by Title (Partial Match)
+// ==========================================
+    List<Book> findByTitleContainingIgnoreCase(String title);
 
     // ==========================================
-    // Search Books by Category
-    // ==========================================
-    List<Book> findByCategoryEqualsIgnoreCase(String category);
+// Search Books by Category (Partial Match)
+// ==========================================
+    List<Book> findByCategoryContainingIgnoreCase(String category);
 
     // ==========================================
-    // Delete All Books by Category
-    // ==========================================
+// Delete All Books by Category (Exact Match)
+// ==========================================
     void deleteAllByCategoryEqualsIgnoreCase(String category);
 
 }

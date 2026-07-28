@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/book")
@@ -106,6 +108,32 @@ public class BookController {
 
 
         return "redirect:/book/list";
+    }
+
+    // ==========================================
+// Search Books
+// URL Example:
+// /book/search?keyword=java
+// ==========================================
+
+    @GetMapping("/search")
+    public String searchBooks(@RequestParam("keyword") String keyword,
+                              Model model) {
+
+        List<Book> books = bookService.searchByTitle(keyword);
+
+        // If no books found by title,
+        // search by category.
+        if (books.isEmpty()) {
+
+            books = bookService.searchByCategory(keyword);
+
+        }
+
+        model.addAttribute("books", books);
+
+        return "list-book";
+
     }
 
 }

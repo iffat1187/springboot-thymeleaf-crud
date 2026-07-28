@@ -73,4 +73,35 @@ public class BookServiceImpl implements BookService {
 
     }
 
+    // ==========================================
+// Search Books By Title
+// ==========================================
+
+    @Override
+    public List<Book> searchByTitle(String title) {
+
+        return bookRepository.findByTitleContainingIgnoreCase(title);
+
+    }
+
+    @Override
+    public List<Book> searchByCategory(String category) {
+
+        return bookRepository.findByCategoryContainingIgnoreCase(category);
+
+    }
+
+
+// ==========================================
+// Delete Books By Category
+// ==========================================
+
+    @Override
+    public void deleteBooksByCategory(String category) {
+
+        bookRepository.deleteAllByCategoryEqualsIgnoreCase(category);
+
+    }
+
+
 }
