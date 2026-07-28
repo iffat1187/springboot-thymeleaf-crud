@@ -1,36 +1,99 @@
 /* ==========================================
+   LibraSphere Dark Purple Theme
+========================================== */
+
+
+/* ==========================================
    General Page Styling
 ========================================== */
 
 body {
-    background-color: #f4f6f9;
+
+    background-color: #0f0b1a;
+
+    color: #f5f3ff;
+
     font-family: Arial, Helvetica, sans-serif;
+
 }
+
 
 
 /* ==========================================
    Navbar
 ========================================== */
 
-.navbar-brand {
-    font-size: 1.4rem;
-    font-weight: bold;
+.navbar {
+
+    background-color: #171126 !important;
+
+    border-bottom: 1px solid #6d28d9;
+
 }
 
 
+.navbar-brand {
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    color: #ffffff !important;
+
+}
+
+
+.nav-link {
+
+    color: #c4b5fd !important;
+
+    transition: .3s;
+
+}
+
+
+.nav-link:hover {
+
+    color: #a855f7 !important;
+
+}
+
+
+
 /* ==========================================
-   Card
+   Cards
 ========================================== */
 
 .card {
 
-    border: none;
+    background-color: #1a132b;
+
+    color: #f5f3ff;
+
+    border: 1px solid #3b2367;
 
     border-radius: 15px;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    box-shadow:
+            0 10px 25px rgba(168,85,247,0.15);
+
+    transition: .3s;
 
 }
+
+
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+            0 15px 35px rgba(168,85,247,0.35);
+
+}
+
 
 
 /* ==========================================
@@ -39,11 +102,22 @@ body {
 
 .card-header {
 
-    font-size: 22px;
+    background: linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7
+    ) !important;
 
-    font-weight: bold;
+    color:white !important;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    border-radius:15px 15px 0 0 !important;
 
 }
+
 
 
 /* ==========================================
@@ -52,66 +126,260 @@ body {
 
 .btn {
 
-    border-radius: 8px;
+    border-radius:10px;
 
-    transition: .3s;
-
-}
-
-.btn:hover{
-
-    transform: translateY(-2px);
+    transition:.3s;
 
 }
 
 
-/* ==========================================
-   Form Labels
-========================================== */
 
-.form-label{
+.btn:hover {
 
-    font-weight:600;
+    transform:translateY(-3px);
 
-}
-
-
-/* ==========================================
-   Validation Message
-========================================== */
-
-.text-danger{
-
-    font-size:14px;
+    box-shadow:
+            0 8px 20px rgba(168,85,247,.4);
 
 }
 
 
-/* ==========================================
-   Table
-========================================== */
 
-.table{
+/* Primary Button */
 
-    background:white;
+.btn-primary {
+
+    background-color:#7c3aed;
+
+    border-color:#7c3aed;
 
 }
 
 
-.table th{
 
-    background:#0d6efd;
+.btn-primary:hover {
+
+    background-color:#9333ea;
+
+    border-color:#9333ea;
+
+}
+
+
+
+/* Warning Button */
+
+.btn-warning {
+
+    background-color:#c084fc;
+
+    border-color:#c084fc;
+
+    color:#1f1235;
+
+}
+
+
+
+.btn-warning:hover {
+
+    background-color:#a855f7;
 
     color:white;
 
 }
 
 
+
+/* Danger Button */
+
+.btn-danger:hover {
+
+    background-color:#be185d;
+
+}
+
+
+
+/* Success Button */
+
+.btn-success:hover {
+
+    background-color:#7e22ce;
+
+}
+
+
+
 /* ==========================================
-   Footer Margin
+   Form Styling
 ========================================== */
 
-.page-space{
+
+.form-label {
+
+    font-weight:600;
+
+    color:#ddd6fe;
+
+}
+
+
+
+.form-control {
+
+
+    background-color:#120d21;
+
+    color:white;
+
+    border:1px solid #4c1d95;
+
+}
+
+
+
+.form-control:focus {
+
+
+    background-color:#120d21;
+
+    color:white;
+
+    border-color:#a855f7;
+
+
+    box-shadow:
+            0 0 0 .2rem rgba(168,85,247,.25);
+
+}
+
+
+
+.form-control::placeholder {
+
+    color:#a78bfa;
+
+}
+
+
+
+/* ==========================================
+   Table
+========================================== */
+
+
+.table {
+
+    background-color:#1a132b;
+
+    color:white;
+
+}
+
+
+
+.table th {
+
+    background-color:#7c3aed;
+
+    color:white;
+
+}
+
+
+
+.table td {
+
+    background-color:#1a132b;
+
+    color:#f5f3ff;
+
+}
+
+
+
+.table-hover tbody tr:hover {
+
+
+    background-color:#2e1065 !important;
+
+    color:white;
+
+}
+
+
+
+/* ==========================================
+   Dashboard Cards
+========================================== */
+
+
+.border-primary {
+
+    border-color:#8b5cf6 !important;
+
+}
+
+
+.border-success {
+
+    border-color:#a855f7 !important;
+
+}
+
+
+.border-warning {
+
+    border-color:#c084fc !important;
+
+}
+
+
+.border-danger {
+
+    border-color:#9333ea !important;
+
+}
+
+
+
+/* ==========================================
+   Icons
+========================================== */
+
+
+.bi {
+
+    color:#c084fc;
+
+}
+
+
+
+/* ==========================================
+   Alerts
+========================================== */
+
+
+.alert {
+
+    background-color:#25113d;
+
+    color:#f5f3ff;
+
+    border:1px solid #7c3aed;
+
+}
+
+
+
+/* ==========================================
+   Page Space
+========================================== */
+
+
+.page-space {
 
     margin-top:40px;
 
